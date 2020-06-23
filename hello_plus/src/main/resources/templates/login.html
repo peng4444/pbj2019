@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+</head>
+<body>
+<h3>登录</h3>
+<form method="post" action="login">
+    用户名:<input type="text" name="name"/><br/>
+    密码：<input type="password" name="password"/><br/>
+    <input type="submit" value="登录"/>
+</form>
+<!--Vue 渲染元素时，出于效率考虑，会尽可能地复用已有的元素而非重新渲染，-->
+<div id="vueLogin">
+    <template v-if="type === 'name'">
+        <label>用户名：</label>
+        <input placeholder="输入用户名" key="name-input" name="name">
+    </template>
+    <template v-else>
+        <label>邮箱：</label>
+        <input placeholder="输入邮箱" key="mail-input" name="email">
+    </template>
+    <template>
+        <label>密码：</label>
+        <input placeholder="输入密码" key="password-input" name="password">
+    </template>
+    <br>
+    <input type="submit" value="登录"/>
+    <button @click="handleToggleClick">切换邮箱登录</button>
+    <button @click="handleToggleClick">切换用户名登录</button>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+    var vueLogin = new Vue({
+        el: '#vueLogin',
+        data: {
+            type: 'name'
+        },
+        methods: {
+            handleToggleClick: function () {
+                this.type = this.type === 'name' ? 'mail' : 'name';
+            }
+        }
+    })
+</script>
+</body>
+</html>

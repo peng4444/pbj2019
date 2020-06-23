@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--Spring配置文件-->
+
+    <!--配置包扫描，只要标注了@Controller，@Service，@Repository，@Component-->
+    <!--<context:component-scan base-package="cn.pbj2019.demo.spring_annotion"></context:component-scan>-->
+    <!--use-default-filters="false"取消默认的过滤规则，设置新的过滤规则 includeFilters 需要使用-->
+    <!--<context:component-scan base-package="cn.pbj2019.demo.spring_annotion" use-default-filters="false"></context:component-scan>-->
+    <!--spring通过配置文件给实体赋值-->
+    <!--scope="prototype":指定为多实例，默认为单实例，等同于@scope注解-->
+    <bean id="person" class="cn.pbj2019.demo.spring_annotion.entity.Person" scope="prototype">
+        <property name="name" value="pbj"/>
+        <property name="age" value="22"/>
+    </bean>
+</beans>
