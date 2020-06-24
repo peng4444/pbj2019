@@ -13,7 +13,7 @@ import java.io.IOException;
  * @ClassName: MyTypeFilter
  * @Author: pbj
  * @Date: 2019/7/22 21:06
- * @Description: TODO
+ * @Description: TODO 自定义包扫描规则
  */
 public class MyTypeFilter implements TypeFilter {
 

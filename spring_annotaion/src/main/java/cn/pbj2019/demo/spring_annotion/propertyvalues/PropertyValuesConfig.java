@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
  * @ClassName: PropertyValuesConfig
  * @Author: pbj
  * @Date: 2019/7/25 23:01
- * @Description: TODO
+ * @Description: TODO 属性赋值
  */
 //使用@PropertySource读取外部配置文件的中保存的k/v保存到运行环境中,使用#{}取出配置文件中的值
 @PropertySource(value = {"classpath:/person.properties"})

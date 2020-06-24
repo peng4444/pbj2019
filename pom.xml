@@ -11,13 +11,11 @@
 
     <modules>
         <module>spring_annotaion</module>
-        <module>designpattern</module>
         <module>javaconcurrency</module>
         <module>hello_plus</module>
         <module>pbj_common</module>
         <module>vue_demo</module>
         <module>springboot_shiro</module>
-        <module>springboot_redis</module>
         <module>sso_demo</module>
         <module>springboot_file</module>
     </modules>

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @ClassName: Person
  * @Author: pbj
  * @Date: 2019/7/21 23:36
- * @Description: TODO
+ * @Description: TODO Person实体类
  */
 public class Person {
 
@@ -14,7 +14,7 @@ public class Person {
     //1.基本数值
     //2.可以SpEL;#{}
     //3.可以写${},取出配置文件【person.properties】中的值（运行在环境变量里面的值）
-    @Value("123")
+    @Value("123") //@Value("${person.nickName=zhangsan}")
     private String name;
     @Value("#{20-2}")  //@Value("${person.age}")
     private Integer age;

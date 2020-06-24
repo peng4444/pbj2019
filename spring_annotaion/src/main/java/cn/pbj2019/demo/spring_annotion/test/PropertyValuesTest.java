@@ -1,4 +1,4 @@
-package cn.pbj2019.demo.spring_annotion;
+package cn.pbj2019.demo.spring_annotion.test;
 
 import cn.pbj2019.demo.spring_annotion.entity.Person;
 import cn.pbj2019.demo.spring_annotion.propertyvalues.PropertyValuesConfig;
@@ -11,12 +11,11 @@ import org.springframework.core.env.ConfigurableEnvironment;
  * @ClassName: PropertyValuesTest
  * @Author: pbj
  * @Date: 2019/7/25 23:06
- * @Description: TODO
+ * @Description: TODO 属性赋值测试
  */
 @Configuration
 public class PropertyValuesTest {
     AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(PropertyValuesConfig.class);
-
 
     @Test
     public void test01(){
@@ -25,13 +24,12 @@ public class PropertyValuesTest {
 
         Person person = (Person)applicationContext.getBean("person");
         System.out.println(person);
-
+        //获取配置文件中的赋值
         ConfigurableEnvironment environment = applicationContext.getEnvironment();
-        String properties = environment.getProperty("person.nickname");
+        String properties = environment.getProperty("person.age");
         System.out.println(properties);
         System.out.println("-----------------");
     }
-
 
     //复杂beans输出
     public void printBeans( AnnotationConfigApplicationContext applicationContext){
@@ -40,6 +38,4 @@ public class PropertyValuesTest {
             System.out.println(beans);
         }
     }
-
-
 }

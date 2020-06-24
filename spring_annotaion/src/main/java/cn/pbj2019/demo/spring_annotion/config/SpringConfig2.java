@@ -2,8 +2,7 @@ package cn.pbj2019.demo.spring_annotion.config;
 
 import cn.pbj2019.demo.spring_annotion.entity.Color;
 import cn.pbj2019.demo.spring_annotion.entity.Person;
-import cn.pbj2019.demo.spring_annotion.utils.LinuxCondition;
-import cn.pbj2019.demo.spring_annotion.utils.WindowsCondition;
+import cn.pbj2019.demo.spring_annotion.utils.*;
 import org.springframework.context.annotation.*;
 
 /**
@@ -14,7 +13,7 @@ import org.springframework.context.annotation.*;
  */
 //@Conditional(WindowsCondition.class) //类中组件统一配置 ，满足当前条件，这个类中配置的所有的bean注册才能生效
 @Configuration
-@Import({Color.class,MyImportSelector.class,MyImportBeanDefinitionRegistrar.class})//给容器导入组件，id默认为组件的全类名 @Import({Color.class,Red.class}) 导入多个
+@Import({Color.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})//给容器导入组件，id默认为组件的全类名 @Import({Color.class,Red.class}) 导入多个
 public class SpringConfig2 {
 
     //默认是单实例的
@@ -41,7 +40,6 @@ public class SpringConfig2 {
         System.out.println("给容器中添加Person");
         return new Person("aaa", 23);
     }
-
 
     //@Conditional({Condition}):按照一定的条件进行判断，满足条件给容器注册bean
     //如果系统是windows,给容器中注册bill，如果系统是Linux，给容器注册jobs
@@ -70,7 +68,8 @@ public class SpringConfig2 {
      * 		2）、要获取工厂Bean本身，我们需要给id前面加一个&
      * 			&colorFactoryBean
      */
-    @Bean
+
+    @Bean //使用Spring提供的 FactoryBean（工厂Bean）
     public ColorFactoryBean colorFactoryBean(){
         return new ColorFactoryBean();
     }

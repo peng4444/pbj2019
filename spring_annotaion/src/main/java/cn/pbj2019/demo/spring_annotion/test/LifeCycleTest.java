@@ -1,4 +1,4 @@
-package cn.pbj2019.demo.spring_annotion;
+package cn.pbj2019.demo.spring_annotion.test;
 
 import cn.pbj2019.demo.spring_annotion.lifecycle.ConfigOfLifeCycle;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @ClassName: LifeCycleTest
  * @Author: pbj
  * @Date: 2019/7/25 22:08
- * @Description: TODO
+ * @Description: TODO 生命周期测试
  */
 public class LifeCycleTest {
 

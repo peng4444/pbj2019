@@ -1,4 +1,4 @@
-package cn.pbj2019.demo.spring_annotion.lifecycle;
+package cn.pbj2019.demo.spring_annotion.entity;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -13,13 +13,15 @@ import org.springframework.stereotype.Component;
 @Component // 将后置处理器加入到容器中
 public class MyBeanPostProccessor implements BeanPostProcessor {
 
+    @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("postProcessBeforeInitialization"+bean.toString());
-        return null;
+        System.out.println("postProcessBeforeInitialization..."+beanName+"=>"+bean);
+        return bean;
     }
 
+    @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("postProcessAfterInitialization"+bean.toString());
-        return null;
+        System.out.println("postProcessAfterInitialization..."+beanName+"=>"+bean);
+        return bean;
     }
 }
