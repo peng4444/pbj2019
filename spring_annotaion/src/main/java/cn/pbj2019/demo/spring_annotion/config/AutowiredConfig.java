@@ -36,16 +36,28 @@ package cn.pbj2019.demo.spring_annotion.config;
  */
 
 import cn.pbj2019.demo.spring_annotion.dao.BookDao;
+import cn.pbj2019.demo.spring_annotion.entity.Car;
+import cn.pbj2019.demo.spring_annotion.entity.Color;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan({"cn.pbj2019.demo.spring_annotion.dao","cn.pbj2019.demo.spring_annotion.service","cn.pbj2019.demo.spring_annotion.controller"})
+@ComponentScan({"cn.pbj2019.demo.spring_annotion.entity","cn.pbj2019.demo.spring_annotion.dao","cn.pbj2019.demo.spring_annotion.service","cn.pbj2019.demo.spring_annotion.controller"})
 public class AutowiredConfig {
 
     @Bean
     public BookDao bookDao(){
-        return new BookDao();
+        BookDao bookDao = new BookDao();
+        bookDao.setLabel("2");
+        return bookDao;
+    }
+
+    //@Bean标注的方法创建对象的时候，方法参数的值从容器中获取
+    @Bean
+    public Color color(Car car) {
+        Color color = new Color();
+        color.setCar(car);
+        return color;
     }
 }

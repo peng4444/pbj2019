@@ -3,7 +3,6 @@ package cn.pbj2019.demo.spring_annotion.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
@@ -16,7 +15,6 @@ import java.util.UUID;
 @Repository
 public class UserDao {
 
-    @Autowired
     private JdbcTemplate jdbcTemplate;
 
 

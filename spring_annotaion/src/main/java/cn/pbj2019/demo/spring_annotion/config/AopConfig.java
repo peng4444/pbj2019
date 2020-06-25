@@ -180,7 +180,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *  * 					出现异常：前置通知-》目标方法-》后置通知-》异常通知
  */
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy//开启基于注解的aop模式 等同于在xml配置文件中<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 public class AopConfig {
     //业务逻辑类加入容器中
     @Bean

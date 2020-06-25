@@ -1,4 +1,4 @@
-package cn.pbj2019.demo.spring_annotion;
+package cn.pbj2019.demo.spring_annotion.test;
 
 import cn.pbj2019.demo.spring_annotion.config.TxConfig;
 import cn.pbj2019.demo.spring_annotion.service.UserService;
