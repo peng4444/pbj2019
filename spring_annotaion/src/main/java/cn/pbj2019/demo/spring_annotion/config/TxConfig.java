@@ -61,16 +61,18 @@ import java.beans.PropertyVetoException;
 @Configuration
 public class TxConfig {
 
+    //创建数据源
     @Bean
     public DataSource dataSource() throws PropertyVetoException {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         dataSource.setUser("root");
         dataSource.setPassword("mysqladmin");
         dataSource.setDriverClass("com.mysql.jdbc.Driver");
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/pbj_test");
+        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/db_pbj_test");
         return dataSource;
     }
 
+    //创建JdbcTemplate组件，方便JDBC增删改查操作。
     @Bean
     public JdbcTemplate jdbcTemplate() throws PropertyVetoException {
         //Spring对@Configuration类会特殊处理；给容器中加组件的方法，多次调用都只是从容器中找组件

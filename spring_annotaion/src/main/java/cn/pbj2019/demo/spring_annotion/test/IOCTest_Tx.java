@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @ClassName: IOCTest_Tx
  * @Author: pbj
  * @Date: 2019/7/31 17:25
- * @Description: TODO
+ * @Description: TODO 事务测试类
  */
 public class IOCTest_Tx {
 

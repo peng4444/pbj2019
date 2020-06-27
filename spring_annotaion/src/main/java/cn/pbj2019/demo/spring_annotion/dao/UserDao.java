@@ -15,13 +15,14 @@ import java.util.UUID;
 @Repository
 public class UserDao {
 
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
 
     public void insert() {
-        String sql = "insert into user(username,password) values(?,?)";
+        String sql = "insert into t_user (name,password,age) values(?,?,?)";
 
         String username = UUID.randomUUID().toString().substring(0, 5);
-        jdbcTemplate.update(sql, username, "123456");
+        jdbcTemplate.update(sql, username, "123456",18);
     }
 }

@@ -17,10 +17,10 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    @Transactional
+    @Transactional//事务方法注解并且配置类中添加@EnableTransactionManagement开启事务管理功能。同时配置事务管理器。
     public void insertUser() {
         userDao.insert();
         System.out.println("数据库插入成功");
-         int i  = 0/1;
+         int i  = 10/0;
     }
 }
